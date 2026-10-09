@@ -1,0 +1,135 @@
+{
+  "course_name": "美识集·传统美学通识课",
+  "topic": "面向大众的中外传统美学入门与进阶赏析",
+  "audience": "普通大众、学生和传统文化兴趣爱好者，无需艺术史基础",
+  "language": "zh",
+  "lesson_count_target": 13,
+  "exercise_type": "thinking",
+  "output_path": "互动课程/美识集传统美学通识课",
+  "visual_scheme": "light",
+  "accent_base": "#C63D2F",
+  "design_variance": 8,
+  "motion_intensity": 5,
+  "visual_density": 5,
+  "created_at": "2026-09-23",
+  "updated_at": "2026-09-23",
+  "lessons": [
+    {
+      "index": 1,
+      "slug": "01-what-is-beauty",
+      "title": "美是什么",
+      "core_concepts": ["审美共识", "含蓄与寓意", "对称与秩序"],
+      "presentation": "生活场景元素辨识 + 审美直觉测试",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 2,
+      "slug": "02-color-code",
+      "title": "色彩里的密码",
+      "core_concepts": ["传统色命名", "五色系统", "朝代色彩气质"],
+      "presentation": "传统色板切换 + 猜色名游戏",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 3,
+      "slug": "03-pattern-code",
+      "title": "纹样里的密码",
+      "core_concepts": ["几何纹样", "自然纹样", "吉祥纹样", "纹样层级"],
+      "presentation": "纹样侦探匹配 + 结构拆解卡",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 4,
+      "slug": "04-architecture-wisdom",
+      "title": "建筑里的智慧",
+      "core_concepts": ["木构与石构", "斗拱与飞檐", "民居地域性"],
+      "presentation": "建筑构型工作台 + 中外结构对比",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 5,
+      "slug": "05-painting-space",
+      "title": "绘画里的意境",
+      "core_concepts": ["三远法", "书画同源", "留白", "光影革命"],
+      "presentation": "观法切换 + 留白比例实验",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 6,
+      "slug": "06-object-craft",
+      "title": "器物里的匠心",
+      "core_concepts": ["瓷器谱系", "汝窑天青", "玉器与青铜", "明式家具"],
+      "presentation": "材质实验室 + 釉色辨认",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 7,
+      "slug": "07-costume-style",
+      "title": "服饰里的风流",
+      "core_concepts": ["交领右衽", "历代服饰", "织物工艺", "戏曲服饰"],
+      "presentation": "服饰搭配室 + 形制线索判断",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 8,
+      "slug": "08-garden-poetry",
+      "title": "园林里的诗意",
+      "core_concepts": ["借景框景对景", "叠山理水", "曲径与藏景"],
+      "presentation": "框景取景器 + 造园要素评分",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 9,
+      "slug": "09-festival-aesthetics",
+      "title": "节日里的美学",
+      "core_concepts": ["二十四节气", "节日配色", "地域民俗", "民间美术"],
+      "presentation": "节气色历 + 节日视觉装配",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 10,
+      "slug": "10-everyday-beauty",
+      "title": "生活里的美学",
+      "core_concepts": ["宋人四般闲事", "器以载道", "传统工艺", "当代转化"],
+      "presentation": "生活美学清单生成器 + 课程回顾",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 11,
+      "slug": "11-calligraphy-seal",
+      "title": "书法与篆刻",
+      "core_concepts": ["书法五体", "笔法墨法章法", "篆刻印面", "书画印边界"],
+      "presentation": "书体特征对照器 + 公开藏品观察练习",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 12,
+      "slug": "12-grottoes-sculpture",
+      "title": "石窟与佛教雕塑",
+      "core_concepts": ["石窟综合体", "四大石窟", "敦煌彩塑", "艺术中国化"],
+      "presentation": "四大石窟观察器 + 材料与空间比较",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 13,
+      "slug": "13-heritage-craft",
+      "title": "非遗、文房与活态传统",
+      "core_concepts": ["非遗十大门类", "传统美术", "传统技艺", "文房工具"],
+      "presentation": "非遗项目检索台 + 工艺到审美观察卡",
+      "exercise_type_override": null,
+      "status": "done"
+    }
+  ]
+}

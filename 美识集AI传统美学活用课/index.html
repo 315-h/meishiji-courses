@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="美识集是面向AI创作者的传统美学创作工具，提供配色生成、纹样拆解、风格对比与互动课程。">
+  <title>美识集·传统美学AI创作工具</title>
+  <link rel="stylesheet" href="assets/course.css">
+</head>
+<body data-page="index" data-root="">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html"><span class="brand-mark">美</span><span>美识集</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="#path">课程体系</a>
+        <a class="nav-link" href="#palette">配色工具</a>
+        <a class="nav-link" href="tools/patterns.html">纹样拆解</a>
+        <a class="nav-link" href="tools/compare.html">风格对比</a>
+        <a class="nav-link" href="extensions.html">文化扩展</a>
+        <a class="nav-link" href="supplement.html">补充资料</a>
+        <a class="nav-link" href="#about">关于项目</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-shell hero" aria-labelledby="hero-title">
+      <div class="hero-copy animate-in">
+        <span class="eyebrow">中外传统美学 · AI创作工具课</span>
+        <h1 id="hero-title">美识集<br>传统美学AI创作工具</h1>
+        <p class="hero-lead">面向AI创作者的结构化审美知识库。内置配色生成、纹样拆解和风格对比，把知识直接变成提示词与创作判断。</p>
+        <div class="hero-tags" aria-label="课程特点">
+          <span class="tag">三层知识架构</span>
+          <span class="tag">即用提示词模板</span>
+          <span class="tag">跨品类可复用</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#palette">体验配色生成器</a>
+          <a class="btn btn-secondary" href="#lesson-grid">浏览全部课时</a>
+        </div>
+        <p class="quick-demo"><strong>先试一下：</strong>点击配色卡任意色块，HEX色值会直接复制。</p>
+        <p class="hero-note">涵盖中外两大文明体系 · 8大艺术品类 · 120+知识点 · 纯前端轻量实现</p>
+      </div>
+      <aside class="hero-panel animate-in delay-2" id="mini-palette" aria-label="随机传统配色卡"></aside>
+    </section>
+
+    <section class="section-tight" aria-label="课程规模">
+      <div class="page-shell metric-band">
+        <div class="metric"><strong>15组</strong><span>即用主题色板</span></div>
+        <div class="metric"><strong>19</strong><span>核心纹样与线稿索引</span></div>
+        <div class="metric"><strong>120+</strong><span>结构化知识点</span></div>
+        <div class="metric"><strong>3组</strong><span>中外风格对比</span></div>
+        <div class="metric"><strong>10节</strong><span>互动实战课</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="process-title">从痛点到产品，而不是先做课程目录</h2>
+          <p>先判断用户真正缺什么，再决定内容结构、工具形态和版本边界。</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-card"><span class="process-index">01</span><h3>用户痛点</h3><p>AI传统风格失真，参考来源分散，系统学习门槛高。</p></article>
+          <article class="process-card"><span class="process-index">02</span><h3>产品定位</h3><p>把美育知识做成AI创作者可直接调用的工具化产品。</p></article>
+          <article class="process-card"><span class="process-index">03</span><h3>信息架构</h3><p>底层视觉、实体载体、创作实战三层递进，十课串联。</p></article>
+          <article class="process-card"><span class="process-index">04</span><h3>核心功能</h3><p>配色生成、纹样拆解、风格对比与提示词复用。</p></article>
+          <article class="process-card"><span class="process-index">05</span><h3>迭代规划</h3><p>MVP验证工具价值，V1.0增强线稿与演示，后续扩展专题课程。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="path" aria-labelledby="path-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="path-title">三层递进，不从艺术史目录开始</h2>
+          <p>先掌握通用视觉语言，再理解实体艺术载体，最后把知识放进真实创作任务。</p>
+        </div>
+        <div class="path-grid" id="path-grid"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="palette" aria-labelledby="palette-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="palette-title">传统配色生成器</h2>
+          <p>按主题切换色板，点击色块复制HEX，再生成包含比例、材质和光线的AI提示词。所有色值均标注为屏幕参考值。</p>
+        </div>
+        <div id="home-palette"></div>
+      </div>
+    </section>
+
+    <section class="section" id="lesson-grid" aria-labelledby="lessons-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="lessons-title">十节互动课</h2>
+          <p>每课围绕三到五个核心概念，包含工具实践、知识检测、思考练习和公开资料延伸。</p>
+        </div>
+        <div class="lesson-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="supplement-pack" aria-labelledby="supplement-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="supplement-title">第一类课程补充资料包</h2>
+          <p>将21个补充点整理为可检索资料页，覆盖色值、提示词方法、纹样、建筑、绘画、材质和AI创作避坑。</p>
+        </div>
+        <div class="extension-grid">
+          <article class="extension-card"><div><h3>色值与工具数据</h3><p>补充故宫红、月白、琉璃色研究、回纹演变与缠枝结构，并同步扩充配色工具。</p></div><a class="btn btn-secondary" href="supplement.html#color-system">查看色值资料</a></article>
+          <article class="extension-card"><div><h3>提示词模板库</h3><p>整理国风插画、水墨山水、建筑、皴法、陶瓷、青铜和玉器的可复制提示词。</p></div><a class="btn btn-secondary" href="supplement.html#prompt-library">打开模板库</a></article>
+          <article class="extension-card"><div><h3>AI创作避坑指南</h3><p>对照错误提示词与修正写法，重点解决颜色过艳、画面过满、建筑混体系和材质塑料感。</p></div><a class="btn btn-secondary" href="supplement.html#pitfalls">查看避坑清单</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="tools-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="tools-title">核心工具矩阵</h2>
+          <p>先完成学习和速查，再把结果用于自己的AI创作流程。</p>
+        </div>
+        <div class="tool-grid">
+          <article class="tool-card">
+            <div class="tool-visual" aria-hidden="true">
+              <span style="background:#9DB5AD"></span><span style="background:#E7E4D6"></span><span style="background:#536A68"></span><span style="background:#9EA98D"></span><span style="background:#896D59"></span>
+            </div>
+            <div>
+              <h3>传统配色生成器</h3>
+              <p>15组主题色板，提供色值复制、随机推荐和标准AI配色提示词。</p>
+            </div>
+            <a class="btn btn-primary" href="#palette">立即使用</a>
+          </article>
+          <article class="tool-card">
+            <div class="tool-visual" aria-hidden="true">
+              <span style="background:#414C39"></span><span style="background:#9EA98D"></span><span style="background:#C7A19B"></span><span style="background:#896D59"></span><span style="background:#E8E3D7"></span>
+            </div>
+            <div>
+              <h3>传统纹样拆解卡</h3>
+              <p>按几何、自然、瑞兽分类查看结构、寓意、应用与提示词模板。</p>
+            </div>
+            <a class="btn btn-primary" href="tools/patterns.html">打开纹样库</a>
+          </article>
+          <article class="tool-card">
+            <div class="tool-visual" aria-hidden="true">
+              <span style="background:#536A68"></span><span style="background:#8F3F38"></span><span style="background:#A28450"></span><span style="background:#68727C"></span><span style="background:#D9D1BF"></span>
+            </div>
+            <div>
+              <h3>中外风格对比器</h3>
+              <p>从山水、建筑和色彩三组主题观察东西方视觉逻辑差异。</p>
+            </div>
+            <a class="btn btn-primary" href="tools/compare.html">开始比较</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="about-title">关于这个项目</h2>
+          <p>这不是素材整理，而是一次从用户问题、产品定义到前端落地的完整实践。</p>
+        </div>
+        <div class="project-panel">
+          <div class="project-grid">
+            <article class="project-item">
+              <h3>面向人群</h3>
+              <p>AI绘画创作者、平面设计师、文创从业者，以及需要快速理解传统视觉语言的在校学生。</p>
+            </article>
+            <article class="project-item">
+              <h3>解决痛点</h3>
+              <p>AI生成传统风格失真、跨平台找参考效率低、艺术史学习门槛高，以及内容难以沉淀为个人创作方法。</p>
+            </article>
+            <article class="project-item">
+              <h3>我的角色</h3>
+              <p>独立完成产品定位、用户痛点分析、信息架构、内容体系、交互设计、视觉规范与前端实现。</p>
+            </article>
+            <article class="project-item">
+              <h3>技术栈与交付</h3>
+              <ul>
+                <li>HTML + CSS + 原生JavaScript</li>
+                <li>零第三方依赖，数据和视图分离</li>
+                <li>纯静态部署，适合GitHub Pages、Vercel与Netlify</li>
+              </ul>
+            </article>
+          </div>
+          <div class="project-contact">
+            <div><strong>韩佳雪 · AI产品实践项目</strong><span>可查看公开作品集，或通过邮箱联系交流产品设计与项目细节。</span></div>
+            <div class="button-row">
+              <a class="btn btn-primary" href="https://315-h.github.io/315-h/" target="_blank" rel="noopener">查看作品集</a>
+              <a class="btn btn-secondary" href="mailto:3415703993@qq.com">邮件联系</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="extensions" aria-labelledby="extensions-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="extensions-title">六个文化扩展方向</h2>
+          <p>主课聚焦AI创作中最常用的视觉工具链。雕塑、书法篆刻、园林、服饰、节日节气和中外非遗案例作为扩展库，继续沿用公开资料来源与文化边界。</p>
+        </div>
+        <div class="extension-grid">
+          <article class="extension-card"><div><h3>雕塑审美</h3><p>从体量、材料、转折和观看距离理解雕塑，不生成雕塑原件的三维复刻。</p></div><a class="btn btn-secondary" href="extensions.html#sculpture">查看专题</a></article>
+          <article class="extension-card"><div><h3>书法与篆刻</h3><p>学习笔画、结字、章法和印面空间，同时避免AI伪造具有误导性的文字内容。</p></div><a class="btn btn-secondary" href="extensions.html#calligraphy">查看专题</a></article>
+          <article class="extension-card"><div><h3>古典园林</h3><p>用路径、框景、借景和水石关系组织空间，而不是只堆亭台楼阁。</p></div><a class="btn btn-secondary" href="extensions.html#garden">查看专题</a></article>
+          <article class="extension-card"><div><h3>传统服饰</h3><p>观察材质、剪裁、层级和场合，避免把不同朝代与地区特征任意拼接。</p></div><a class="btn btn-secondary" href="extensions.html#costume">查看专题</a></article>
+          <article class="extension-card"><div><h3>节日与节气</h3><p>区分历法、历史、地方民俗与当代商业表达，不使用猎奇或迷信化解读。</p></div><a class="btn btn-secondary" href="extensions.html#calendar">查看专题</a></article>
+          <article class="extension-card"><div><h3>中外非遗案例</h3><p>用审美和工艺语言理解非遗，不擅自改编或商用传承人的具体作品。</p></div><a class="btn btn-secondary" href="extensions.html#heritage">查看专题</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="standard-title">
+      <div class="page-shell">
+        <div class="section-head">
+          <h2 id="standard-title">资料与版权边界</h2>
+        </div>
+        <div class="interactive-card">
+          <p>课程只使用公开可查的博物馆、艺术史、公共文化和非遗资料。传统色值属于屏幕参考值，不代表文物测色结果。课程不生成或复刻受保护艺术作品的完整图像，涉及历史、民间传说和审美赏析时会分别标注。</p>
+          <ul class="check-list">
+            <li>不使用未公开考古档案、内部手稿或涉密材料。</li>
+            <li>不以优劣框架比较不同文明和地区。</li>
+            <li>不把未确认的色名、典故或建筑构件写入课程。</li>
+            <li>商业使用具体文化元素前，需要单独确认授权和语境。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-row">
+      <div>
+        <strong>美识集·AI创作者传统美学活用课</strong>
+        <div class="footer-note">课程内容更新于2026年9月23日。延伸资料链接指向相关机构公开页面。</div>
+      </div>
+      <div>把传统美学，变成AI可用的创作语言</div>
+    </div>
+  </footer>
+
+  <script src="assets/course-data.js"></script>
+  <script src="assets/lessons-data.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

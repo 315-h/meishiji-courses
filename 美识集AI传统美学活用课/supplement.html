@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="美识集第一类课程补充资料包，包含传统色值、AI提示词方法、纹样、建筑、绘画、器物材质和创作避坑。">
+  <title>第一类课程补充资料包 | 美识集</title>
+  <link rel="stylesheet" href="assets/course.css">
+</head>
+<body data-page="supplement" data-root="">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html"><span class="brand-mark">美</span><span>美识集</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html">课程首页</a>
+        <a class="nav-link" href="tools/patterns.html">纹样工具</a>
+        <a class="nav-link" href="tools/compare.html">风格对比</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-shell tool-hero">
+      <div class="tool-hero-grid">
+        <div>
+          <span class="eyebrow">工具实战型课程 · 21个补充点</span>
+          <h1>第一类课程补充资料包</h1>
+          <p>所有资料围绕AI创作可复用整理，重点提供具体色值、提示词模板、风格关键词、材质描述和避坑写法。史实、创作工具参考与审美赏析分开标注。</p>
+        </div>
+        <div class="lesson-summary">
+          <strong>使用方式</strong>
+          <span>展开条目查看知识点和提示词。带复制按钮的模板可直接放入AI绘画工具，再根据主体、比例和媒介调整。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="page-shell metric-band">
+        <div class="metric"><strong>21</strong><span>个可展开补充点</span></div>
+        <div class="metric"><strong>7</strong><span>个知识模块</span></div>
+        <div class="metric"><strong>12+</strong><span>条可复制提示词</span></div>
+        <div class="metric"><strong>1组</strong><span>新增明代宫廷色板</span></div>
+        <div class="metric"><strong>5组</strong><span>AI创作避坑对照</span></div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="page-shell">
+        <div class="supplement-toc" aria-label="补充资料目录">
+          <a href="#color-system">01 色彩体系</a>
+          <a href="#prompt-methods">02 提示词方法</a>
+          <a href="#patterns">03 传统纹样</a>
+          <a href="#architecture">04 建筑关键词</a>
+          <a href="#painting">05 绘画风格</a>
+          <a href="#material">06 材质质感</a>
+          <a href="#pitfall">07 避坑指南</a>
+          <a href="#prompt-library">08 提示词模板库</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-shell lesson-content">
+      <section class="content-section" id="color-system">
+        <h2><span class="section-number">1</span>传统色彩体系扩充</h2>
+
+        <details class="supplement-item" data-point="1">
+          <summary><span>补充点01</span><strong>故宫红的参考色值</strong><em>色彩</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【明清】【中国北京】【北京日报、故宫博物院公开资料】</span></div>
+            <p>故宫红不是标准正红，传统表述中常见“朱红”或“赤”。公开资料给出的CMYK参考值可用于视觉对照，但屏幕HEX值仍受设备与取样方式影响。</p>
+            <table class="compare-table">
+              <thead><tr><th>部位</th><th>CMYK参考</th><th>HEX屏幕参考</th><th>特点</th></tr></thead>
+              <tbody>
+                <tr><td>故宫城墙</td><td>20, 80, 100, 20</td><td>#A6211D</td><td>偏暗，有厚重感</td></tr>
+                <tr><td>故宫宫墙</td><td>15, 90, 100, 25</td><td>#9E1B16</td><td>更深沉，有岁月感</td></tr>
+                <tr><td>标准正红对照</td><td>0, 100, 100, 0</td><td>#FF0000</td><td>过艳，不建议直接大面积使用</td></tr>
+              </tbody>
+            </table>
+            <div class="insight-box"><strong>创作工具参考：</strong>写“朱红宫墙”“明代官式建筑红墙”比只写“red”更具体，同时要补充材质、光线和旧化痕迹。</div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="2">
+          <summary><span>补充点02</span><strong>清代建筑琉璃瓦的科学色值</strong><em>色彩</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【清代】【中国北京】【故宫博物院公开研究资料】</span></div>
+            <p>公开研究以Lab和明度、饱和度、色相角记录官式琉璃瓦颜色。黄釉明度与饱和度较高，在日光下更醒目，这解释了黄瓦在皇家建筑中的视觉穿透力。</p>
+            <table class="compare-table">
+              <thead><tr><th>釉色</th><th>L*</th><th>a*</th><th>b*</th><th>C*</th><th>h°</th></tr></thead>
+              <tbody>
+                <tr><td>黄釉</td><td>56.26</td><td>13.72</td><td>39.47</td><td>41.79</td><td>70.83</td></tr>
+                <tr><td>绿釉</td><td>45.28</td><td>-16.37</td><td>14.28</td><td>21.72</td><td>138.91</td></tr>
+                <tr><td>天坛蓝釉</td><td>28.26</td><td>5.87</td><td>-18.99</td><td>19.90</td><td>287.2</td></tr>
+              </tbody>
+            </table>
+            <p>这些数值是公开研究数据，不应在未经说明的情况下直接折算为宣称准确的屏幕HEX值。</p>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="3">
+          <summary><span>补充点03</span><strong>明黄色没有统一标准色度值</strong><em>色彩</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【清代】【中国】【故宫博物院公开研究资料】</span></div>
+            <p>公开研究指出，清代“明黄色”更接近一类相近颜色的统称，不同染匠和材料会形成差异，不能简单当成一个现代标准色值。</p>
+            <div class="insight-box"><strong>创作工具参考：</strong>可写“清代明黄，偏暖，介于鹅黄与金黄之间”，给AI保留合理变化空间，不追求唯一准确色值。</div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="4">
+          <summary><span>补充点04</span><strong>月白色的定义与屏幕参考</strong><em>色彩</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【跨时期】【中国】【故宫博物院藏品说明】</span></div>
+            <p>月白是中国古代织物颜色名，不同时期深浅略有差异，基本介于淡蓝与中蓝之间。故宫公开藏品说明中可见以月白为地色的织绣实例。</p>
+            <table class="compare-table"><thead><tr><th>屏幕参考</th><th>HEX</th><th>建议用途</th></tr></thead><tbody><tr><td>月白浅</td><td>#D6ECF0</td><td>织物底色、雾气、浅色空间</td></tr><tr><td>月白深</td><td>#A8C5D4</td><td>衣物阴影、水面、冷色过渡</td></tr></tbody></table>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="5">
+          <summary><span>补充点05</span><strong>中国传统色应用色卡</strong><em>资料来源</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【当代】【中国】【中国纺织信息中心、光明网公开报道】</span></div>
+            <p>公开报道显示，中国传统色应用色卡通过植物染工艺验证并结合历史文献与文物资料，量化收录常用传统色彩。</p>
+            <div class="insight-box"><strong>创作工具参考：</strong>网站色板仍统一标注为屏幕参考。制作正式设计交付时，应进一步核验最新色卡版本、授权和印刷条件。</div>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="prompt-methods">
+        <h2><span class="section-number">2</span>AI绘画提示词方法</h2>
+
+        <details class="supplement-item" data-point="6">
+          <summary><span>补充点06</span><strong>国风插画的五个关键要素</strong><em>提示词</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【创作工具参考】【公开AI创作教程经验整理】</span></div>
+            <ol class="number-list">
+              <li>配色：靛蓝、赭石、尘粉、月白为主，朱砂少量点缀，避免高饱和红绿对撞。</li>
+              <li>留白：让空白和墨迹共同承担画面重量，保持疏密节奏。</li>
+              <li>线条：允许粗细变化和书写感，不要统一成均匀矢量线。</li>
+              <li>材质：宣纸、绢本、矿物颜料等媒介要与笔触和光线一致。</li>
+              <li>构图：用密度与开放的平衡取代机械居中。</li>
+            </ol>
+            <div class="copy-row"><pre>guofeng illustration, [主体], indigo blue and ochre palette with cinnabar accent, generous negative space, expressive ink lines, rice paper texture, balanced density and openness, Song dynasty aesthetic --ar 3:4</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="7">
+          <summary><span>补充点07</span><strong>水墨山水的三条核心指令</strong><em>提示词</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【创作工具参考】【公开AI创作教程经验整理】</span></div>
+            <p>只写“ink wash”可能被模型理解为带淡彩的黑白风景。需要明确单色、留白和画面比例，再选择皴法与构图。</p>
+            <table class="compare-table"><thead><tr><th>目标</th><th>建议提示词</th><th>作用</th></tr></thead><tbody><tr><td>单色</td><td>monochrome ink, no color</td><td>限制彩度漂移</td></tr><tr><td>留白</td><td>reserve 60 to 80 percent of frame as empty space</td><td>建立挂轴式空间</td></tr><tr><td>比例</td><td>--ar 2:3 或 --ar 9:16</td><td>强化竖幅山水构图</td></tr></tbody></table>
+            <div class="copy-row"><pre>Ma Yuan one-corner composition, subject occupies only bottom-right quarter, a lone fishing boat on cold river, old fisherman with rod, vast blank space symbolizing river surface, occasional ink dots suggesting ripples, monochrome ink, Southern Song academy style, ethereal and solitary --ar 2:3 --no fish, birds, vegetation, text</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="8">
+          <summary><span>补充点08</span><strong>四种中式美学风格公式</strong><em>提示词</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【创作工具参考】【公开AI创作案例整理】</span></div>
+            <table class="compare-table"><thead><tr><th>风格</th><th>核心关键词</th><th>配色与构图</th><th>提示词片段</th></tr></thead><tbody>
+              <tr><td>宋韵</td><td>极简克制、清雅</td><td>低饱和、留白、一角构图</td><td>Song dynasty academy painting, minimalist negative space, pale ink wash, low saturation</td></tr>
+              <tr><td>盛唐</td><td>浓烈华贵、饱满</td><td>矿物色、高对比、满构图</td><td>Tang dynasty mural, mineral pigments, rich color contrast, ornate pattern, full composition</td></tr>
+              <tr><td>水墨</td><td>朦胧恬淡、笔墨</td><td>单色墨、散点透视、虚实相生</td><td>shuimo ink wash, monochrome, misty atmosphere, scattered perspective, ink texture</td></tr>
+              <tr><td>敦煌</td><td>矿物壁画、平面装饰</td><td>石青石绿朱砂、风化墙面</td><td>Dunhuang mural, flying apsara, mineral pigments, weathered wall texture, Tang dynasty</td></tr>
+            </tbody></table>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="9">
+          <summary><span>补充点09</span><strong>中文结构词通常比泛化英文更精准</strong><em>提示词</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【创作工具参考】【公开中文模型提示词案例整理】</span></div>
+            <p>“ancient Chinese temple”过于笼统，容易混入其他地区建筑元素。使用“明代官式建筑、三重飞檐、青灰筒瓦、晨雾”等中文结构词，通常更容易锁定具体特征。</p>
+            <div class="copy-row"><pre>明代官式建筑，三重飞檐，青灰筒瓦，斗拱结构清楚，晨雾缭绕，木材与灰砖质感，远景轴线明确</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+            <p>英文模型可把结构词展开为 dougong bracket sets、upturned eaves、grey ceramic tiles 等具体描述。</p>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="patterns">
+        <h2><span class="section-number">3</span>传统纹样AI描述</h2>
+
+        <details class="supplement-item" data-point="10">
+          <summary><span>补充点10</span><strong>回纹的完整结构与演变</strong><em>纹样</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【新石器时代至明清】【中国】【人民日报、中国新闻网、博物馆公开资料】</span></div>
+            <p>回纹以横竖短线折绕组成，因形近汉字“回”而得名。商周器物中常出现方形回旋的地纹形式，后世又广泛用于器物、织物、家具和建筑边饰。</p>
+            <ul class="plain-list">
+              <li>骨架：方形或长方形的连续回旋。</li>
+              <li>排列：二方连续、四方连续或单独边框。</li>
+              <li>变体：与卷草、花卉组合形成锦地。</li>
+            </ul>
+            <div class="copy-row"><pre>strict square spiral geometric border, continuous repeating meander pattern, even line width, applied as edge trim on ceramic or architectural surface</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="11">
+          <summary><span>补充点11</span><strong>缠枝纹的结构</strong><em>纹样</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【唐宋至明清】【中国】【故宫博物院藏品说明】</span></div>
+            <p>缠枝纹以植物枝干或蔓藤为骨架，枝叶与花卉相互缠绕，常见二方连续或四方连续。缠枝莲、缠枝菊、缠枝牡丹等变体需要分开指定。</p>
+            <div class="copy-row"><pre>scrolling vine pattern, interlocking floral tendrils, lotus blossoms, continuous S-curve stem, all-over pattern, Ming dynasty porcelain style</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="12">
+          <summary><span>补充点12</span><strong>云纹与雷纹的区别</strong><em>纹样</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与审美赏析】【商周以来】【中国】【中国新闻网与博物馆公开资料】</span></div>
+            <table class="compare-table"><thead><tr><th>纹样</th><th>线条特征</th><th>形态</th><th>AI描述重点</th></tr></thead><tbody><tr><td>云纹</td><td>圆转、盘旋、舒卷</td><td>曲线回旋</td><td>cloud scroll pattern, soft curved cloud heads</td></tr><tr><td>雷纹</td><td>方折、回旋、直角转折</td><td>回字形连续折线</td><td>square spiral meander, thunder pattern, angular repeated lines</td></tr></tbody></table>
+            <div class="insight-box"><strong>创作工具参考：</strong>不要把云纹与雷纹混写。圆转和方折会直接改变模型生成的骨架。</div>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="architecture">
+        <h2><span class="section-number">4</span>建筑风格AI关键词</h2>
+
+        <details class="supplement-item" data-point="13">
+          <summary><span>补充点13</span><strong>唐宋建筑关键词</strong><em>建筑</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与创作工具参考】【唐宋】【中国】【中国网及公开建筑科普资料】</span></div>
+            <p>核心特征包括精巧斗拱、飞檐起翘、青瓦木柱、深远出檐和典雅庄重的比例。唐代至宋代的具体做法持续变化，不能只用一个时代词概括全部建筑。</p>
+            <div class="copy-row"><pre>Song dynasty wooden architecture, intricate dougong bracket sets, upturned flying eaves, grey ceramic tile roof, dark wooden columns, elegant and solemn proportions, deep overhang, mountain temple setting, morning mist, cinematic lighting --ar 16:9</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="14">
+          <summary><span>补充点14</span><strong>徽派建筑关键词</strong><em>建筑</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与创作工具参考】【明清】【中国安徽】【公开文旅资料】</span></div>
+            <p>白墙黛瓦、马头墙、院落天井、砖木石三雕和山水环境共同构成徽派聚落的识别特征。“四水归堂”应作为院落与排水关系的描述，不宜脱离建筑语境泛化使用。</p>
+            <div class="copy-row"><pre>Huizhou style architecture, white plaster walls with dark grey tile roofs, stepped horse-head gable walls, central courtyard, intricate brick and wood carvings on door frames and lintels, nestled at the foot of green mountains, reflecting in still water, misty morning, ink wash atmosphere --ar 3:2</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="15">
+          <summary><span>补充点15</span><strong>明代建筑特征</strong><em>建筑</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实】【明代】【中国北京】【北京日报公开建筑科普资料】</span></div>
+            <p>明代官式建筑承继前代做法，又具有屋顶坡度、檐柱侧脚、角柱生起和鸱吻造型等可观察特征。提示词应描述结构关系，不要只堆时代名。</p>
+            <div class="copy-row"><pre>Ming dynasty official architecture, gentle roof slope, outward-inclining columns, rising corner columns, grey tile roof, clear dougong bracket sets, chiwen roof ornaments, restrained decoration, morning mist</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="painting">
+        <h2><span class="section-number">5</span>绘画风格AI描述</h2>
+
+        <details class="supplement-item" data-point="16">
+          <summary><span>补充点16</span><strong>皴法关键词</strong><em>绘画</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与创作工具参考】【唐宋以来】【中国】【公开艺术史与AI创作资料】</span></div>
+            <table class="compare-table"><thead><tr><th>皴法</th><th>英文描述</th><th>视觉特征</th></tr></thead><tbody><tr><td>斧劈皴</td><td>axe-cut texture strokes</td><td>刚劲方折</td></tr><tr><td>披麻皴</td><td>hemp-fiber texture strokes</td><td>柔和绵长</td></tr><tr><td>云头皴</td><td>cloud-head texture strokes</td><td>卷曲圆润</td></tr><tr><td>雨点皴</td><td>rain-drop texture strokes</td><td>密集短点</td></tr><tr><td>豆瓣皴</td><td>bean-slice texture strokes</td><td>短阔碎点</td></tr></tbody></table>
+            <div class="copy-row"><pre>landscape painting with hemp-fiber texture strokes, soft and elongated brush texture, Jiangnan misty mountains, layered ink wash, original composition</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="17">
+          <summary><span>补充点17</span><strong>三远法的提示词应用</strong><em>绘画</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与创作工具参考】【宋代】【中国】【郭熙《林泉高致》公开文献】</span></div>
+            <table class="compare-table"><thead><tr><th>观法</th><th>传统解释</th><th>英文提示词方向</th></tr></thead><tbody><tr><td>高远</td><td>自山下仰山巅</td><td>low angle looking up at towering mountain peak</td></tr><tr><td>深远</td><td>自山前窥山后</td><td>overlapping mountain ranges, deep spatial recession</td></tr><tr><td>平远</td><td>自近山望远山</td><td>distant flat horizon, rolling mountains fading into mist</td></tr></tbody></table>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="material">
+        <h2><span class="section-number">6</span>材质质感AI描述</h2>
+
+        <details class="supplement-item" data-point="18">
+          <summary><span>补充点18</span><strong>陶瓷材质描述模板</strong><em>材质</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与创作工具参考】【中国历代陶瓷】【博物馆与公开AI创作资料】</span></div>
+            <table class="compare-table"><thead><tr><th>釉面类型</th><th>提示词方向</th><th>视觉效果</th></tr></thead><tbody><tr><td>青瓷</td><td>celadon jade-green glaze, pooled glaze in recesses</td><td>玉质、半透明、凹陷积釉</td></tr><tr><td>白瓷</td><td>sweet white glaze, soft warm white, lustrous but not glossy</td><td>温润、柔散射</td></tr><tr><td>开片釉</td><td>fine crackle network, celadon base, gold-traced crackle</td><td>开片纹理清楚</td></tr><tr><td>无釉粗陶</td><td>matte unglazed stoneware, fine-grit clay texture</td><td>哑光、颗粒、吸水</td></tr><tr><td>青花瓷</td><td>underglaze cobalt painting on white porcelain</td><td>釉下钴蓝与清晰笔线</td></tr></tbody></table>
+            <div class="copy-row"><pre>celadon jade-green glaze, translucent depth, pooled glaze in recesses, soft specular highlight, visible clay body at foot, museum studio lighting</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="19">
+          <summary><span>补充点19</span><strong>青铜器质感描述</strong><em>材质</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【史实与创作工具参考】【商周以来】【中国】【博物馆公开资料】</span></div>
+            <p>青铜器表面常见暗褐底、孔雀石绿锈和蓝铜矿蓝锈，锈蚀分布并不均匀。提示词应描述氧化、铸造接缝、矿物沉积和局部磨亮。</p>
+            <div class="copy-row"><pre>ancient Chinese bronze ritual vessel, copper-tin alloy, uneven patina with malachite green and azurite blue corrosion, dark brown base metal, taotie mask pattern in relief, weathered surface with mineral deposits, museum lighting, macro detail of casting seams --ar 1:1</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+
+        <details class="supplement-item" data-point="20">
+          <summary><span>补充点20</span><strong>玉器质感描述</strong><em>材质</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【创作工具参考与审美赏析】【中国历代玉器】【博物馆公开资料】</span></div>
+            <p>玉器的关键是内部散射和边缘透光，不是尖锐表面反光。可描述温润光泽、内部絮状结构、糖色沁色、边缘透光与细腻抛光。</p>
+            <div class="copy-row"><pre>Chinese nephrite jade carving, warm lustrous polish, semi-translucent with light glowing through thin edges, subtle sugar-brown inclusions, natural patina, fine polished surface, low relief dragon motif, soft diffused lighting, dark background --ar 1:1</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="pitfall">
+        <h2><span class="section-number">7</span>AI创作避坑指南</h2>
+        <details class="supplement-item" data-point="21" open>
+          <summary><span>补充点21</span><strong>五个常见翻车点</strong><em>避坑</em></summary>
+          <div class="supplement-body">
+            <div class="source-line"><span>【创作工具参考】【多个公开AI创作教程综合整理】</span></div>
+            <div class="pitfall-grid">
+              <article class="pitfall-pair"><h3>颜色太艳</h3><strong>错误写法</strong><code>red and green, Chinese style</code><strong>修正写法</strong><code>cinnabar and celadon, low saturation, muted mineral palette</code></article>
+              <article class="pitfall-pair"><h3>画面太满</h3><strong>错误写法</strong><code>beautiful Chinese landscape, lots of details</code><strong>修正写法</strong><code>reserve 60 percent negative space, minimalist composition</code></article>
+              <article class="pitfall-pair"><h3>建筑不准</h3><strong>错误写法</strong><code>ancient Chinese temple</code><strong>修正写法</strong><code>Ming dynasty official architecture, dougong brackets, upturned eaves</code></article>
+              <article class="pitfall-pair"><h3>材质塑料感</h3><strong>错误写法</strong><code>ceramic vase, beautiful</code><strong>修正写法</strong><code>celadon glaze, pooled glaze in recesses, soft specular, visible clay body</code></article>
+              <article class="pitfall-pair"><h3>风格混杂</h3><strong>错误写法</strong><code>Tang and Song style painting</code><strong>修正写法</strong><code>Northern Song landscape, hemp-fiber texture strokes, original composition</code></article>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <section class="content-section" id="prompt-library">
+        <h2><span class="section-number">8</span>可复制提示词模板库</h2>
+        <p>以下模板都采用“主体或媒介 + 结构 + 材质 + 光线 + 原创边界”的顺序。复制后请替换方括号内容或末尾主体描述。</p>
+
+        <details class="supplement-item" open>
+          <summary><span>模板01</span><strong>国风插画基础</strong><em>通用</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>original guofeng illustration, [subject], indigo blue and ochre palette with cinnabar accent, generous negative space, expressive ink lines, rice paper texture, balanced density and openness --ar 3:4</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板02</span><strong>水墨山水</strong><em>绘画</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>original monochrome ink landscape, one-corner composition, layered mountain shapes, misty negative space, hemp-fiber texture strokes, subtle ink dots, reserved blank area for title balance --ar 2:3</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板03</span><strong>明代官式建筑</strong><em>建筑</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>Ming dynasty official architecture, gentle roof slope, clear dougong bracket sets, grey ceramic tile roof, deep eaves, restrained decoration, morning mist, realistic structural proportions --ar 16:9</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板04</span><strong>徽派院落</strong><em>建筑</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>Huizhou style courtyard, white plaster walls, dark grey tile roof, stepped horse-head gables, brick and wood carving details, wet stone path, misty mountain setting, ink wash atmosphere --ar 3:2</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板05</span><strong>青花瓷纹样</strong><em>器物</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>underglaze cobalt blue floral pattern on white porcelain, continuous scrolling vine, clear brush lines, transparent glaze, soft pooled glaze in recesses, curved ceramic surface, studio lighting --ar 1:1</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板06</span><strong>青铜器材质</strong><em>器物</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>ancient bronze vessel, copper-tin alloy, uneven malachite green and azurite blue patina, dark brown metal, casting seams, mineral deposits, low relief pattern, museum lighting, macro detail --ar 1:1</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板07</span><strong>玉器材质</strong><em>器物</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>Chinese nephrite jade carving, warm lustrous surface, semi-translucent edges, soft inner glow, subtle sugar-brown inclusions, natural patina, fine polish, low relief motif, diffused lighting --ar 1:1</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板08</span><strong>回纹边饰</strong><em>纹样</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>continuous square spiral meander border, even line width, strict angular rhythm, applied to a curved ceramic vessel, slight perspective distortion, underglaze blue or carved stone texture --ar 16:9</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板09</span><strong>缠枝莲纹</strong><em>纹样</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>continuous scrolling lotus vine, S-curve stem, interlocking leaves and blossoms, balanced density, all-over porcelain pattern, crisp underglaze cobalt lines, subtle curved surface --ar 1:1</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板10</span><strong>宋韵山水</strong><em>绘画</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>Northern Song landscape aesthetic, pale ink wash, low saturation, misty mountain layers, generous negative space, restrained brush texture, original subject and composition --ar 3:4</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板11</span><strong>盛唐矿物色</strong><em>绘画</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>Tang dynasty inspired mineral color painting, azurite blue, malachite green, cinnabar red and ochre, flat decorative composition, weathered wall texture, original narrative subject --ar 4:3</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+        <details class="supplement-item">
+          <summary><span>模板12</span><strong>月白织物</strong><em>色彩</em></summary>
+          <div class="supplement-body"><div class="copy-row"><pre>pale moon-white silk textile, subtle blue undertone, layered garment folds, soft diffused light, faint woven pattern, restrained cinnabar accent, museum textile photography --ar 3:4</pre><button class="copy-prompt-btn" type="button" data-copy-prompt>复制</button></div></div>
+        </details>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-row">
+      <span>补充资料仅用于公开美育与AI创作学习，具体史实与商业使用需再次核验来源。</span>
+      <a href="index.html">返回课程首页</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      function copyText(text, button) {
+        var fallback = function () {
+          var area = document.createElement("textarea");
+          area.value = text;
+          area.style.position = "fixed";
+          area.style.left = "-9999px";
+          document.body.appendChild(area);
+          area.select();
+          try {
+            document.execCommand("copy");
+            button.textContent = "已复制";
+          } catch (error) {
+            button.textContent = "请手动复制";
+          }
+          document.body.removeChild(area);
+        };
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(function () {
+            button.textContent = "已复制";
+          }).catch(fallback);
+        } else {
+          fallback();
+        }
+        window.setTimeout(function () {
+          button.textContent = "复制";
+        }, 1600);
+      }
+
+      document.addEventListener("click", function (event) {
+        var button = event.target.closest("[data-copy-prompt]");
+        if (!button) return;
+        var row = button.closest(".copy-row");
+        var prompt = row ? row.querySelector("pre") : null;
+        if (prompt) copyText(prompt.textContent.trim(), button);
+      });
+    })();
+  </script>
+</body>
+</html>

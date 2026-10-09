@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>美识集 · 网页底纹设计方案</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Source Han Sans SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      background: #EEE8DA;
+      color: #414C39;
+      min-height: 100vh;
+    }
+
+    /* ========== 顶部控制栏 ========== */
+    .control-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(245, 240, 228, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(65, 76, 57, 0.1);
+      padding: 14px 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .control-bar h1 {
+      font-family: "Source Han Serif SC", serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin-right: auto;
+    }
+    .pattern-btn {
+      padding: 6px 14px;
+      border: 1px solid rgba(65, 76, 57, 0.2);
+      background: transparent;
+      color: #414C39;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: all 0.2s;
+    }
+    .pattern-btn:hover {
+      background: rgba(65, 76, 57, 0.06);
+    }
+    .pattern-btn.active {
+      background: #414C39;
+      color: #F5F0E4;
+      border-color: #414C39;
+    }
+    .opacity-control {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #896D59;
+    }
+    .opacity-control input[type="range"] {
+      width: 100px;
+      accent-color: #414C39;
+    }
+
+    /* ========== 底纹展示区 ========== */
+    .preview-area {
+      padding-top: 80px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* 底纹层 - 通过JS切换class */
+    .pattern-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    /* 内容展示区 */
+    .demo-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 40px 100px;
+    }
+    .demo-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(65, 76, 57, 0.06);
+      border: 1px solid rgba(65, 76, 57, 0.06);
+    }
+    .demo-card h2 {
+      font-family: "Source Han Serif SC", serif;
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #414C39;
+    }
+    .demo-card p {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #6B5D4F;
+      margin-bottom: 12px;
+    }
+    .demo-card .tag-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .demo-card .tag {
+      padding: 4px 12px;
+      background: rgba(199, 161, 155, 0.15);
+      color: #8F3F38;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+    .color-swatch {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      margin-right: 8px;
+      vertical-align: middle;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* ========== 底纹1：宣纸纹理 ========== */
+    .pattern-xuanzhi {
+      background-color: #EEE8DA;
+      background-image:
+        radial-gradient(ellipse at 20% 30%, rgba(137, 109, 89, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(65, 76, 57, 0.03) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    }
+
+    /* ========== 底纹2：回纹暗纹 ========== */
+    .pattern-huiwen {
+      background-color: #EEE8DA;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='1' stroke-opacity='0.06'%3E%3Cpath d='M10 10 H25 V25 H17 V17 H13 V21 H21'/%3E%3Cpath d='M35 10 H50 V25 H42 V17 H38 V21 H46'/%3E%3Cpath d='M10 35 H25 V50 H17 V42 H13 V46 H21'/%3E%3Cpath d='M35 35 H50 V50 H42 V42 H38 V46 H46'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ========== 底纹3：云纹暗纹 ========== */
+    .pattern-yunwen {
+      background-color: #EEE8DA;
+      background-image: url("data:image/svg+xml,%3Csvg width='120' height='80' viewBox='0 0 120 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M20 50 C15 40, 25 32, 35 35 C37 27, 50 25, 55 33 C62 29, 72 34, 69 43 C77 44, 76 53, 68 55 L30 55 C22 55, 19 51, 20 50 Z'/%3E%3Cpath d='M80 65 C76 58, 84 52, 91 55 C92 50, 101 49, 104 55 C109 53, 114 58, 111 63 C115 64, 114 70, 108 71 L86 71 C81 71, 78 68, 80 65 Z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ========== 底纹4：水彩晕染 ========== */
+    .pattern-shuicai {
+      background-color: #EEE8DA;
+      background-image:
+        radial-gradient(ellipse 600px 400px at 15% 20%, rgba(158, 169, 141, 0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 500px 350px at 85% 30%, rgba(199, 161, 155, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 700px 500px at 50% 90%, rgba(83, 106, 104, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 90% 80%, rgba(168, 117, 69, 0.06) 0%, transparent 70%);
+    }
+
+    /* ========== 底纹5：远山意境 ========== */
+    .pattern-yuanshan {
+      background-color: #EEE8DA;
+      background-image: url("data:image/svg+xml,%3Csvg width='1200' height='300' viewBox='0 0 1200 300' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23414C39' fill-opacity='0.04'%3E%3Cpath d='M0 200 Q150 120 300 170 T600 150 T900 180 T1200 140 L1200 300 L0 300 Z'/%3E%3C/g%3E%3Cg fill='%23414C39' fill-opacity='0.03'%3E%3Cpath d='M0 230 Q200 170 400 210 T800 190 T1200 220 L1200 300 L0 300 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-size: 100% auto;
+    }
+
+    /* ========== 底纹6：几何格纹 ========== */
+    .pattern-jihe {
+      background-color: #EEE8DA;
+      background-image:
+        linear-gradient(rgba(65, 76, 57, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(65, 76, 57, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* ========== 底纹7：冰裂纹 ========== */
+    .pattern-binglie {
+      background-color: #EEE8DA;
+      background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='0.8' stroke-opacity='0.05'%3E%3Cpath d='M20 60 L70 90 L110 70 L160 100 L190 85'/%3E%3Cpath d='M70 90 L50 140 L90 170 L130 150 L180 180'/%3E%3Cpath d='M110 70 L100 120 L130 150'/%3E%3Cpath d='M50 140 L30 175'/%3E%3Cpath d='M90 170 L70 195'/%3E%3Cpath d='M160 100 L175 130'/%3E%3Cpath d='M20 60 L10 90'/%3E%3Cpath d='M110 70 L130 45'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ========== 底纹8：卷草暗纹 ========== */
+    .pattern-juancao {
+      background-color: #EEE8DA;
+      background-image: url("data:image/svg+xml,%3Csvg width='160' height='100' viewBox='0 0 160 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M10 50 C30 20, 50 80, 70 50 C90 20, 110 80, 130 50 C145 30, 155 40, 150 55'/%3E%3Cpath d='M25 38 C18 30, 15 25, 21 22 C27 20, 31 28, 28 35'/%3E%3Cpath d='M65 38 C58 30, 55 25, 61 22 C67 20, 71 28, 68 35'/%3E%3Cpath d='M105 38 C98 30, 95 25, 101 22 C107 20, 111 28, 108 35'/%3E%3Cpath d='M25 62 C18 70, 15 75, 21 78 C27 80, 31 72, 28 65'/%3E%3Cpath d='M65 62 C58 70, 55 75, 61 78 C67 80, 71 72, 68 65'/%3E%3Cpath d='M105 62 C98 70, 95 75, 101 78 C107 80, 111 72, 108 65'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* ========== 底纹方案说明卡片 ========== */
+    .pattern-info {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(65, 76, 57, 0.1);
+      font-size: 13px;
+      color: #6B5D4F;
+      z-index: 50;
+      max-width: 90%;
+      text-align: center;
+    }
+    .pattern-info strong {
+      color: #414C39;
+      font-family: "Source Han Serif SC", serif;
+    }
+
+    /* 代码展示区 */
+    .code-block {
+      background: #2D2D2D;
+      color: #E0E0E0;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      line-height: 1.7;
+      overflow-x: auto;
+      margin-top: 16px;
+      position: relative;
+    }
+    .code-block .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 4px 12px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #E0E0E0;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .code-block .copy-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .code-comment { color: #6A9955; }
+    .code-property { color: #9CDCFE; }
+    .code-value { color: #CE9178; }
+
+    @media (max-width: 768px) {
+      .control-bar { padding: 10px 16px; }
+      .control-bar h1 { font-size: 15px; width: 100%; margin-bottom: 8px; }
+      .pattern-btn { padding: 5px 10px; font-size: 12px; }
+      .demo-content { padding: 40px 20px 80px; }
+      .demo-card { padding: 24px; }
+      .demo-card h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 底纹层 -->
+  <div class="pattern-layer pattern-xuanzhi" id="patternLayer"></div>
+
+  <!-- 控制栏 -->
+  <div class="control-bar">
+    <h1>美识集 · 网页底纹设计方案</h1>
+    <button class="pattern-btn active" data-pattern="xuanzhi">宣纸纹理</button>
+    <button class="pattern-btn" data-pattern="huiwen">回纹暗纹</button>
+    <button class="pattern-btn" data-pattern="yunwen">云纹暗纹</button>
+    <button class="pattern-btn" data-pattern="shuicai">水彩晕染</button>
+    <button class="pattern-btn" data-pattern="yuanshan">远山意境</button>
+    <button class="pattern-btn" data-pattern="jihe">几何格纹</button>
+    <button class="pattern-btn" data-pattern="binglie">冰裂纹</button>
+    <button class="pattern-btn" data-pattern="juancao">卷草暗纹</button>
+    <div class="opacity-control">
+      <span>透明度</span>
+      <input type="range" id="opacitySlider" min="0" max="100" value="100">
+      <span id="opacityValue">100%</span>
+    </div>
+  </div>
+
+  <!-- 展示内容 -->
+  <div class="preview-area">
+    <div class="demo-content">
+
+      <div class="demo-card">
+        <h2>当前底纹：<span id="patternName">宣纸纹理</span></h2>
+        <p id="patternDesc">模拟宣纸的温润质感，极浅的纸张纤维噪点叠加柔和的色块晕染，是最百搭的基础底纹。几乎不增加视觉负担，长时间阅读也不疲劳。</p>
+        <div class="tag-row">
+          <span class="tag">温润雅致</span>
+          <span class="tag">零视觉负担</span>
+          <span class="tag">适合长文阅读</span>
+          <span class="tag">全站通用</span>
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h2>效果预览</h2>
+        <p>这是一段示例文字，用来展示底纹与正文的搭配效果。传统美学的核心不在于繁复的装饰，而在于恰到好处的留白与质感。</p>
+        <p>好的底纹应该是"隐形"的——用户不会特意注意到它的存在，但会莫名觉得这个页面"看起来很舒服"。底纹的作用是营造氛围，而不是抢夺内容的注意力。</p>
+        <p>所有底纹均采用纯CSS + SVG实现，零版权风险，加载速度极快，可以直接复制到你的项目中使用。</p>
+        <div class="tag-row">
+          <span class="color-swatch" style="background:#414C39"></span>深橄榄
+          <span class="color-swatch" style="background:#896D59"></span>黏土棕
+          <span class="color-swatch" style="background:#C7A19B"></span>尘粉
+          <span class="color-swatch" style="background:#9EA98D"></span>鼠尾草绿
+          <span class="color-swatch" style="background:#EEE8DA"></span>暖象牙
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h2>使用方法</h2>
+        <p>1. 点击上方按钮切换不同底纹风格</p>
+        <p>2. 调整透明度滑块，找到最适合的浓度</p>
+        <p>3. 复制下方CSS代码，粘贴到你的页面样式中</p>
+        <p>4. 建议底纹透明度控制在30%-80%之间，根据内容卡片的背景透明度灵活调整</p>
+        <div class="code-block" id="codeBlock">
+          <button class="copy-btn" onclick="copyCode()">复制代码</button>
+<span class="code-comment">/* 宣纸纹理底纹 */</span>
+<span class="code-property">body</span> {
+  <span class="code-property">background-color</span>: <span class="code-value">#EEE8DA</span>;
+  <span class="code-property">background-image</span>:
+    <span class="code-value">radial-gradient(ellipse at 20% 30%, rgba(137,109,89,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(65,76,57,0.03) 0%, transparent 50%),
+    url("data:image/svg+xml,...")</span>;
+}
+        </div>
+      </div>
+
+      <div class="demo-card">
+        <h2>八种底纹适用场景建议</h2>
+        <p><strong>宣纸纹理</strong>：全站通用，尤其适合长文阅读、课程内容页</p>
+        <p><strong>回纹暗纹</strong>：适合首页、导航栏、标题区，增加秩序感和文化氛围</p>
+        <p><strong>云纹暗纹</strong>：适合国风插画、场景概念设计相关页面</p>
+        <p><strong>水彩晕染</strong>：适合首屏Hero区、课程介绍页，增加艺术感</p>
+        <p><strong>远山意境</strong>：适合页脚、章节分隔区，营造东方空间感</p>
+        <p><strong>几何格纹</strong>：适合工具页、数据展示区，增加理性秩序感</p>
+        <p><strong>冰裂纹</strong>：适合陶瓷、器物相关内容页，呼应主题</p>
+        <p><strong>卷草暗纹</strong>：适合服饰、织物、装饰艺术相关内容页</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 底纹说明 -->
+  <div class="pattern-info">
+    <strong id="infoName">宣纸纹理</strong>：<span id="infoDesc">模拟宣纸质感，百搭基础款</span>
+  </div>
+
+  <script>
+    const patternData = {
+      xuanzhi: {
+        name: '宣纸纹理',
+        desc: '模拟宣纸质感，百搭基础款，零视觉负担',
+        code: `/* 宣纸纹理底纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image:\n    radial-gradient(ellipse at 20% 30%, rgba(137,109,89,0.04) 0%, transparent 50%),\n    radial-gradient(ellipse at 80% 70%, rgba(65,76,57,0.03) 0%, transparent 50%),\n    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");\n}`
+      },
+      huiwen: {
+        name: '回纹暗纹',
+        desc: '连续回折的秩序感，适合首页和标题区',
+        code: `/* 回纹暗纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='1' stroke-opacity='0.06'%3E%3Cpath d='M10 10 H25 V25 H17 V17 H13 V21 H21'/%3E%3Cpath d='M35 10 H50 V25 H42 V17 H38 V21 H46'/%3E%3Cpath d='M10 35 H25 V50 H17 V42 H13 V46 H21'/%3E%3Cpath d='M35 35 H50 V50 H42 V42 H38 V46 H46'/%3E%3C/g%3E%3C/svg%3E");\n}`
+      },
+      yunwen: {
+        name: '云纹暗纹',
+        desc: '柔曲层叠的云气，营造仙气和氛围感',
+        code: `/* 云纹暗纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image: url("data:image/svg+xml,%3Csvg width='120' height='80' viewBox='0 0 120 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M20 50 C15 40, 25 32, 35 35 C37 27, 50 25, 55 33 C62 29, 72 34, 69 43 C77 44, 76 53, 68 55 L30 55 C22 55, 19 51, 20 50 Z'/%3E%3C/g%3E%3C/svg%3E");\n}`
+      },
+      shuicai: {
+        name: '水彩晕染',
+        desc: '柔和色块渐变，适合首屏和艺术感页面',
+        code: `/* 水彩晕染底纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image:\n    radial-gradient(ellipse 600px 400px at 15% 20%, rgba(158,169,141,0.12) 0%, transparent 70%),\n    radial-gradient(ellipse 500px 350px at 85% 30%, rgba(199,161,155,0.1) 0%, transparent 70%),\n    radial-gradient(ellipse 700px 500px at 50% 90%, rgba(83,106,104,0.08) 0%, transparent 70%);\n}`
+      },
+      yuanshan: {
+        name: '远山意境',
+        desc: '极简山形轮廓，适合页脚和章节分隔',
+        code: `/* 远山意境底纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image: url("data:image/svg+xml,%3Csvg width='1200' height='300' viewBox='0 0 1200 300' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23414C39' fill-opacity='0.04'%3E%3Cpath d='M0 200 Q150 120 300 170 T600 150 T900 180 T1200 140 L1200 300 L0 300 Z'/%3E%3C/g%3E%3C/svg%3E");\n  background-repeat: no-repeat;\n  background-position: bottom center;\n  background-size: 100% auto;\n}`
+      },
+      jihe: {
+        name: '几何格纹',
+        desc: '极简线条网格，适合工具和数据页',
+        code: `/* 几何格纹底纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image:\n    linear-gradient(rgba(65,76,57,0.03) 1px, transparent 1px),\n    linear-gradient(90deg, rgba(65,76,57,0.03) 1px, transparent 1px);\n  background-size: 40px 40px;\n}`
+      },
+      binglie: {
+        name: '冰裂纹',
+        desc: '自然开裂的随机纹路，适合器物主题页',
+        code: `/* 冰裂纹底纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='0.8' stroke-opacity='0.05'%3E%3Cpath d='M20 60 L70 90 L110 70 L160 100 L190 85'/%3E%3Cpath d='M70 90 L50 140 L90 170 L130 150 L180 180'/%3E%3C/g%3E%3C/svg%3E");\n}`
+      },
+      juancao: {
+        name: '卷草暗纹',
+        desc: 'S形流动枝蔓，适合服饰和装饰主题页',
+        code: `/* 卷草暗纹 */\nbody {\n  background-color: #EEE8DA;\n  background-image: url("data:image/svg+xml,%3Csvg width='160' height='100' viewBox='0 0 160 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23414C39' stroke-width='1' stroke-opacity='0.05'%3E%3Cpath d='M10 50 C30 20, 50 80, 70 50 C90 20, 110 80, 130 50'/%3E%3C/g%3E%3C/svg%3E");\n}`
+      }
+    };
+
+    const patternLayer = document.getElementById('patternLayer');
+    const patternName = document.getElementById('patternName');
+    const patternDesc = document.getElementById('patternDesc');
+    const infoName = document.getElementById('infoName');
+    const infoDesc = document.getElementById('infoDesc');
+    const codeBlock = document.getElementById('codeBlock');
+    const opacitySlider = document.getElementById('opacitySlider');
+    const opacityValue = document.getElementById('opacityValue');
+    const buttons = document.querySelectorAll('.pattern-btn');
+
+    let currentPattern = 'xuanzhi';
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentPattern = btn.dataset.pattern;
+        const data = patternData[currentPattern];
+        patternLayer.className = 'pattern-layer pattern-' + currentPattern;
+        patternName.textContent = data.name;
+        patternDesc.textContent = getFullDesc(currentPattern);
+        infoName.textContent = data.name;
+        infoDesc.textContent = data.desc;
+        updateCodeBlock(data.code);
+      });
+    });
+
+    opacitySlider.addEventListener('input', () => {
+      const val = opacitySlider.value;
+      opacityValue.textContent = val + '%';
+      patternLayer.style.opacity = val / 100;
+    });
+
+    function getFullDesc(key) {
+      const descs = {
+        xuanzhi: '模拟宣纸的温润质感，极浅的纸张纤维噪点叠加柔和的色块晕染，是最百搭的基础底纹。几乎不增加视觉负担，长时间阅读也不疲劳。',
+        huiwen: '以传统回纹为元素的极低透明度暗纹，连续回折的线条带来秩序感和文化氛围。适合用在首页、导航栏和标题区域，增加文化感但不喧宾夺主。',
+        yunwen: '以传统云纹为元素的暗纹，柔曲层叠的云气形态带来仙气和流动感。适合国风插画、场景概念设计相关的页面，营造东方意境。',
+        shuicai: '多个柔和色块的径向渐变叠加，模拟水彩晕染的自然效果。颜色从橄榄绿、尘粉到黛青，温润不刺眼。适合首屏Hero区和课程介绍页。',
+        yuanshan: '极简的远山轮廓，两层山形叠加营造空间深度。只在页面底部出现，不影响正文阅读。适合页脚、章节分隔区，营造东方空间感。',
+        jihe: '极简的细线网格，理性而克制。适合工具页、数据展示区和交互功能区，增加秩序感和专业感。',
+        binglie: '模拟瓷器开片和冰面开裂的自然纹路，随机而有节奏。适合陶瓷、器物、工艺相关的内容页面，呼应主题。',
+        juancao: '以卷草纹为元素的暗纹，S形流动的枝蔓带来生长感和装饰性。适合服饰、织物、装饰艺术相关的内容页面。'
+      };
+      return descs[key] || '';
+    }
+
+    function updateCodeBlock(code) {
+      codeBlock.innerHTML = '<button class="copy-btn" onclick="copyCode()">复制代码</button>' +
+        code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/\/\*[\s\S]*?\*\//g, '<span class="code-comment">$&</span>')
+          .replace(/([a-z-]+):/g, '<span class="code-property">$1</span>:')
+          .replace(/:\s*([^;]+);/g, ': <span class="code-value">$1</span>;');
+    }
+
+    function copyCode() {
+      const code = patternData[currentPattern].code;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '已复制!';
+        setTimeout(() => btn.textContent = '复制代码', 1500);
+      });
+    }
+
+    // 初始化
+    updateCodeBlock(patternData.xuanzhi.code);
+  </script>
+</body>
+</html>
