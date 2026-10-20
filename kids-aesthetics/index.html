@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f2e8">
+  <meta name="description" content="十节给小朋友和初学者听的传统美学课。每课三个知识点、一个动手互动、一句口诀。">
+  <meta property="og:title" content="小小美育课 | 传统美学的10个秘密">
+  <meta property="og:description" content="十节给小朋友和初学者听的传统美学课。每课三个知识点、一个动手互动、一句口诀。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="美识集·小小美育课">
+  <meta property="og:image" content="assets/share-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="小小美育课 | 传统美学的10个秘密">
+  <meta name="twitter:description" content="十节给小朋友和初学者听的传统美学课。每课三个知识点、一个动手互动、一句口诀。">
+  <meta name="twitter:image" content="assets/share-cover.png">
+  <title>小小美育课 | 传统美学的10个秘密</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/course.css">
+  <script src="assets/lesson-art.js" defer></script>
+  <script src="assets/course-data.js" defer></script>
+  <script src="assets/course.js" defer></script>
+</head>
+<body data-page="index" data-root="">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="index.html"><span class="brand-mark">小</span><span>小小美育课</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="#learn">能学到什么</a>
+        <a class="nav-link" href="#course-map">课程地图</a>
+        <a class="nav-link" href="#method">怎么学</a>
+        <a class="nav-link" href="#sources">资料边界</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="home-hero">
+      <div class="page-shell home-hero-grid">
+        <div class="hero-copy animate-in">
+          <span class="eyebrow">适合小学 3-6 年级</span>
+          <h1>传统美学的10个秘密</h1>
+          <p>每课40分钟，三个知识点，一个动手互动，一句好记口诀。颜色、花纹、房子、画画，都可以用简单的话讲明白。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="01-color/lesson.html">从第一课开始</a>
+            <a class="btn btn-secondary" href="#course-map">看看全部课程</a>
+          </div>
+        </div>
+        <div class="hero-art-wrap animate-in delay-2" id="home-art">
+          <svg class="hero-art-fallback" width="640" height="420" viewBox="0 0 640 420" role="img" aria-label="小小美育课插画占位图">
+            <rect width="640" height="420" rx="28" fill="#FFFDF8"/>
+            <circle cx="320" cy="204" r="124" fill="#F2CC8F"/>
+            <circle cx="206" cy="154" r="54" fill="#E8A87C"/>
+            <circle cx="434" cy="154" r="54" fill="#A8B5C9"/>
+            <circle cx="320" cy="314" r="54" fill="#8B9D83"/>
+            <path d="M176 342h288" stroke="#414C39" stroke-width="10" stroke-linecap="round"/>
+            <circle cx="320" cy="204" r="66" fill="#C7A19B"/>
+            <text x="320" y="224" text-anchor="middle" font-size="48" font-weight="700" fill="#414C39" font-family="sans-serif">小</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="progress-band" id="progress">
+      <div class="page-shell">
+        <div class="progress-panel">
+          <div class="progress-head">
+            <div class="progress-copy">
+              <h2>我的学习进度</h2>
+              <p>完成课时后，进度会保存在这台设备上。</p>
+            </div>
+            <div class="progress-number" aria-live="polite"><span id="progress-count">0</span> / 10</div>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+          <div class="badge-strip" id="badge-strip" aria-label="学习徽章"></div>
+          <div class="progress-foot">
+            <p class="progress-encouragement" id="progress-encouragement" aria-live="polite">完成第一课，就能开始收集徽章。</p>
+            <button class="btn btn-secondary" id="reset-progress" type="button">清空进度</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certificate-band" id="certificate" hidden>
+      <div class="page-shell">
+        <div class="certificate-card">
+          <span class="section-label">全部完成</span>
+          <h2>小小美育课结业证书</h2>
+          <p>你完成了10节课，解锁“传统美学小博士”。输入名字，生成专属证书。</p>
+
+          <div class="cert-name-input">
+            <label for="cert-name">输入你的名字或昵称</label>
+            <input type="text" id="cert-name" class="text-input"
+                   placeholder="例如：小明、美学小达人" maxlength="12">
+            <small>会显示在证书上，最多12个字</small>
+          </div>
+
+          <div class="cert-preview" id="cert-preview" aria-hidden="true"></div>
+
+          <div class="cert-actions">
+            <button class="btn btn-primary" id="download-certificate" type="button">
+              下载证书 PNG
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn-band" id="learn">
+      <div class="page-shell learn-grid">
+        <div class="learn-copy">
+          <span class="section-label">学完能做什么</span>
+          <h2>学完这10课，小朋友能……</h2>
+          <p>不是背术语，而是能把看到的颜色、花纹、建筑、绘画和节日说清楚。</p>
+        </div>
+        <ol class="ability-list">
+          <li>
+            <span class="ability-mark" style="--mark-color:#E8A87C">色</span>
+            <div><strong>说出5种传统颜色的名字和来源</strong><span>从朱砂、天青和靛蓝开始。</span></div>
+          </li>
+          <li>
+            <span class="ability-mark" style="--mark-color:#8B9D83">纹</span>
+            <div><strong>认出3种常见纹样和瓷器</strong><span>回纹、云纹、缠枝纹，还有青花与青瓷。</span></div>
+          </li>
+          <li>
+            <span class="ability-mark" style="--mark-color:#A8B5C9">筑</span>
+            <div><strong>看懂古建筑的飞檐和斗拱</strong><span>知道屋顶为什么翘，斗拱怎样托住屋檐。</span></div>
+          </li>
+          <li>
+            <span class="ability-mark" style="--mark-color:#D4A5A5">画</span>
+            <div><strong>理解中国画的留白和意境</strong><span>知道空白不是没画完，而是画面的一部分。</span></div>
+          </li>
+          <li>
+            <span class="ability-mark" style="--mark-color:#E07A5F">节</span>
+            <div><strong>说出3个节日的代表颜色</strong><span>春节红、端午绿、中秋黄。</span></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="course-map">
+      <div class="page-shell">
+        <div class="section-heading section-heading-row">
+          <div>
+            <span class="section-label">课程地图</span>
+            <h2>十节课，十个可以动手的问题</h2>
+            <p>从颜色开始，一路看到花纹、房子、画画、写字、瓶子、衣服、花园、节日和石头。每课都能点一点、试一试。</p>
+          </div>
+          <button class="btn btn-secondary" id="random-lesson" type="button">随便挑一课</button>
+        </div>
+        <ol class="start-steps" aria-label="三步开始学习">
+          <li><span>1</span><div><strong>从第一课开始</strong><p>打开《颜色的秘密》，先看三个知识点。</p></div></li>
+          <li><span>2</span><div><strong>玩一个互动</strong><p>点一点、试一试，再念一遍口诀。</p></div></li>
+          <li><span>3</span><div><strong>做完检测就下一课</strong><p>做对3道小题，标记完成，继续往前走。</p></div></li>
+        </ol>
+        <div class="lesson-grid" id="lesson-grid"></div>
+      </div>
+    </section>
+
+    <section class="method-band" id="method">
+      <div class="page-shell method-grid">
+        <div>
+          <span class="section-label">怎么学</span>
+          <h2>不用背术语，先学会看</h2>
+          <p>每节课都用同一条路线。先提一个问题，再看三个知识点，然后动手试一次，最后用口诀记住。</p>
+        </div>
+        <div class="method-steps">
+          <article class="method-step"><span>01</span><div><h3><span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>先看</h3><p>看颜色、形状、材料和位置。先描述，不急着下结论。</p></div></article>
+          <article class="method-step"><span>02</span><div><h3><span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>再想</h3><p>想它为什么这样做。功能、材料、习惯都可能有关。</p></div></article>
+          <article class="method-step"><span>03</span><div><h3><span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 13V5a2 2 0 0 1 4 0v6M12 11V4a2 2 0 0 1 4 0v7M16 11V6a2 2 0 0 1 4 0v8a7 7 0 0 1-7 7h-1a7 7 0 0 1-7-7v-3a2 2 0 0 1 4 0"/></svg></span>动手</h3><p>点一点、画一画、搭一搭。手上试过，印象更深。</p></div></article>
+          <article class="method-step"><span>04</span><div><h3><span class="method-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.9-5.2-2.7-5.2 2.7 1-5.9L3.5 9.2l5.9-.9z"/></svg></span>记住</h3><p>用一句短口诀，把三个关键词串起来。</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section source-section" id="sources">
+      <div class="page-shell source-grid">
+        <div>
+          <span class="section-label">资料边界</span>
+          <h2>内容准确，图片可溯源</h2>
+        </div>
+        <div class="source-content">
+          <div class="source-cards">
+            <article class="source-card">
+              <span class="source-mark" aria-hidden="true">资</span>
+              <div><h3>内容准确</h3><p>参考故宫、敦煌、中国非遗网、UNESCO等公开资料。</p></div>
+            </article>
+            <article class="source-card">
+              <span class="source-mark" aria-hidden="true">图</span>
+              <div><h3>图片可溯源</h3><p>图片来自博物馆开放获取和 Wikimedia Commons，图下标明作者、许可和来源。</p></div>
+            </article>
+            <article class="source-card">
+              <span class="source-mark" aria-hidden="true">辨</span>
+              <div><h3>区分史实与传说</h3><p>历史、传说和审美赏析分开说明，不把传说写成史实。</p></div>
+            </article>
+            <article class="source-card">
+              <span class="source-mark" aria-hidden="true">色</span>
+              <div><h3>色值只作参考</h3><p>屏幕色值不是文物测色结果，图片不改动原作内容。</p></div>
+            </article>
+          </div>
+          <details class="source-details">
+            <summary>查看完整资料边界</summary>
+            <div class="source-list">
+              <p>课程参考故宫博物院、敦煌研究院、中国非物质文化遗产网、UNESCO 等公开资料。</p>
+              <p>页面使用原创插图和示意图，不嵌入受版权保护艺术品的完整复刻图。</p>
+              <p>历史、传说和审美赏析分开说明。屏幕色值只作视觉参考，不是文物测色结果。</p>
+              <p>课程照片和藏品图来自克利夫兰艺术博物馆开放获取（CC0）与 Wikimedia Commons（公有领域或 CC BY-SA）。每张图下方标注作品名、年代、作者或机构、许可和原图来源。图片仅作等比缩放和压缩，未改变画面内容。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell footer-row">
+      <div><strong>美识集·小小美育课</strong><span>用简单的话，看懂传统美学。</span></div>
+      <span>内容更新：2026年10月12日</span>
+    </div>
+  </footer>
+
+</body>
+</html>

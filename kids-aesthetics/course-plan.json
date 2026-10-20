@@ -1,0 +1,114 @@
+{
+  "course_name": "美识集·小小美育课",
+  "topic": "面向小学3-6年级与低识字成人的中国传统美学入门",
+  "audience": "小学3-6年级学生及文化水平不高的成人，使用简单短句和直观互动",
+  "language": "zh",
+  "lesson_count_target": 10,
+  "exercise_type": "practice",
+  "output_path": "互动课程/美识集小小美育课",
+  "visual_scheme": "light",
+  "accent_base": "#E07A5F",
+  "design_variance": 7,
+  "motion_intensity": 4,
+  "visual_density": 4,
+  "theme_lock": "light",
+  "created_at": "2026-10-12",
+  "updated_at": "2026-10-12",
+  "source_documents": [
+    "互动课程/小小美育课_系列课程规划.md",
+    "互动课程/小小美育课_图片资料包.md",
+    "互动课程/小小美育课_网页设计规划.md"
+  ],
+  "lessons": [
+    {
+      "index": 1,
+      "slug": "01-color",
+      "title": "颜色的秘密",
+      "core_concepts": ["朱砂红", "天青色", "靛蓝色"],
+      "presentation": "找颜色点击游戏 + 知识点卡 + 来源提示",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 2,
+      "slug": "02-pattern",
+      "title": "花纹的秘密",
+      "core_concepts": ["回纹", "云纹", "缠枝纹"],
+      "presentation": "纹样配对 + 结构拆解 + 寓意说明",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 3,
+      "slug": "03-architecture",
+      "title": "房子的秘密",
+      "core_concepts": ["飞檐", "斗拱", "榫卯"],
+      "presentation": "按顺序搭建斗拱 + 结构观察表",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 4,
+      "slug": "04-painting",
+      "title": "画画的秘密",
+      "core_concepts": ["留白", "散点透视", "墨分五色"],
+      "presentation": "留白加减实验 + 画面变化说明",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 5,
+      "slug": "05-calligraphy",
+      "title": "写字的秘密",
+      "core_concepts": ["篆书", "隶书", "楷书"],
+      "presentation": "名字书体体验 + 书体特征对照",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 6,
+      "slug": "06-porcelain",
+      "title": "瓶子的秘密",
+      "core_concepts": ["瓷与陶", "青花瓷", "青瓷"],
+      "presentation": "给瓶子上色 + 釉色观察",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 7,
+      "slug": "07-costume",
+      "title": "衣服的秘密",
+      "core_concepts": ["交领右衽", "广袖", "腰带"],
+      "presentation": "传统服装搭配台 + 形制说明",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 8,
+      "slug": "08-garden",
+      "title": "花园的秘密",
+      "core_concepts": ["借景", "框景", "曲径"],
+      "presentation": "框景取景器 + 园林手法说明",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 9,
+      "slug": "09-festival",
+      "title": "节日的秘密",
+      "core_concepts": ["春节红", "端午绿", "中秋黄"],
+      "presentation": "节日配色游戏 + 地域差异提示",
+      "exercise_type_override": null,
+      "status": "done"
+    },
+    {
+      "index": 10,
+      "slug": "10-sculpture",
+      "title": "石头的秘密",
+      "core_concepts": ["敦煌", "云冈", "龙门", "麦积山"],
+      "presentation": "石窟观察台 + 风格比较",
+      "exercise_type_override": null,
+      "status": "done"
+    }
+  ]
+}
